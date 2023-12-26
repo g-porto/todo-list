@@ -17,6 +17,8 @@ export function TaskList() {
 
       <div className={styles.tasksBoard}>
         <Task />
+        <Task />
+        <Task />
       </div>
     </div>
   );
