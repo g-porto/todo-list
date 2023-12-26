@@ -1,0 +1,46 @@
+.taskWrapper {
+  display: flex;
+  padding: 1rem;
+  align-items: flex-start;
+  gap: 0.75rem;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  background: var(--gray-500);
+  box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.06);
+  margin-top: 1.5rem;
+}
+
+.taskWrapper p {
+  flex: 1 0 0;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+}
+
+.taskRadio {
+  color: var(--blue);
+  background: transparent;
+  border: none;
+  line-height: 0;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.taskRadio:hover {
+  color: var(--blue-dark);
+}
+
+.deleteTaskButton {
+  color: var(--gray-300);
+  background: transparent;
+  border: none;
+  line-height: 0;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 5px 5.522px 5px 6px;
+}
+
+.deleteTaskButton:hover {
+  background: var(--gray-400);
+  color: var(--danger);
+}
