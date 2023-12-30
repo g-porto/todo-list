@@ -8,12 +8,14 @@ import styles from "./App.module.css";
 
 import "./global.css";
 
+interface Task {
+  id: number
+  description: string
+  completed: boolean
+}
+
 export function App() {
-  const [tasks, setTasks] = useState([{
-    id: 1,
-    description: 'Test task',
-    completed: true
-  }])
+  const [tasks, setTasks] = useState<Task[]>([])
 
   const [newTaskDescription, setNewTaskDescription] = useState('');
 
@@ -37,6 +39,27 @@ export function App() {
 
   function handleNewTaskDesciptionInvalid(event: InvalidEvent<HTMLInputElement>) {
     event.target.setCustomValidity('Esse campo é obrigatório!')
+  }
+
+  function handleToggleTaskCompleted(idOfTaskToToggle: number) {
+    const tasksWithToggled = tasks.map(task => {
+      if (task.id !== idOfTaskToToggle) return task;
+      if(task.id === idOfTaskToToggle) {
+        task.completed ? task.completed = false : task.completed = true;
+
+        return task;
+      }
+    })
+    console.log(tasksWithToggled);
+
+    setTasks(tasksWithToggled);
+  }
+
+  function handleDeleteTask(keyOfTaskToDelete: number) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task.id !== keyOfTaskToDelete;
+    })
+    setTasks(tasksWithoutDeletedOne);
   }
 
   return (
@@ -90,7 +113,7 @@ export function App() {
             <div className={styles.tasksBoard}>
               {tasks.map(task => {
                 return (
-                  <Task description={task.description} completed={task.completed} />
+                  <Task key={task.id} id={task.id} description={task.description} completed={task.completed} onBulletClick={handleToggleTaskCompleted} onDeleteTask={handleDeleteTask} />
                 )
               })}
             </div>
