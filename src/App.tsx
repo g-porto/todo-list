@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
 
 import { Header } from "./components/Header";
 import { Task } from "./components/Task";
+import { EmptyDashboard } from "./components/Dashboard";
 
 import styles from "./App.module.css";
 
@@ -50,7 +51,6 @@ export function App() {
         return task;
       }
     })
-    console.log(tasksWithToggled);
 
     setTasks(tasksWithToggled);
   }
@@ -100,15 +100,7 @@ export function App() {
             </div>
           </div>
           <div>
-            {/* <div className={styles.emptyBoard}>
-              <img src={clipboard} alt="" />
-              <div className={styles.emptyBoardMessage}>
-                <p>
-                  <b>Você ainda não tem tarefas cadastradas</b>
-                </p>
-                <p>Crie tarefas e organize seus itens a fazer</p>
-              </div>
-            </div> */}
+            {/* <EmptyDashboard /> */}
 
             <div className={styles.tasksBoard}>
               {tasks.map(task => {
