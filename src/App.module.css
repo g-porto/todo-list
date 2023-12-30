@@ -2,3 +2,111 @@
   max-width: 46rem;
   margin: 0 auto;
 }
+
+.dashboardWrapper {
+  margin-top: 4rem;
+}
+
+.statsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stats p {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.stats .total {
+  color: var(--blue);
+}
+
+.stats .fulfilled {
+  color: var(--purple);
+}
+
+.stats > div {
+  display: flex;
+  padding: 0.125rem 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--gray-400);
+
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.emptyBoard {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-400);
+  margin-top: 1.5rem;
+}
+
+.emptyBoardMessage p {
+  color: var(--gray-300);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.taskInputGroup {
+  margin-top: -1.75rem;
+  width: 100%;
+}
+
+.taskInputForm {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.taskInput {
+  width: 100%;
+  flex: 1 0 0;
+  padding: 1rem;
+  background: var(--gray-500);
+  color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  font-size: 1rem;
+}
+
+.taskInput::placeholder {
+  color: var(--gray-300);
+}
+
+.taskInputButton {
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.taskInputButton:hover {
+  background: var(--blue);
+  transition: background-color 0.1s;
+}
